@@ -1,0 +1,45 @@
+@SpringBootApplication =
+
+ - @Configuration
+ - @ComponentScan
+ - @EnableAutoConfiguration
+
+ --------------------------------------------------
+
+ Intelligent Decision Making based on:
+
+ Presence / absence of a
+
+ 1: Jar
+ 2: Bean
+ 3: Property
+ 4: ... more
+
+----------------------------------------------
+TUNING
+=========================
+AUTO-CONFIGURATION REPORT
+=========================
+http://docs.spring.io/spring-boot/docs/current/reference/html/auto-configuration-classes.html
+
+http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+ -> enable debug
+
+ Exclusions: (better performance or startup time)
+ -----------
+ 1. Exclude class name: @SpringBootApplication(exclude = {SomeAutoConfig.class})
+ 2. Exclude full qualified name: @SpringBootApplication(excludeName = {a.b.SomeAutoConfig})
+ 3. Application.properties: spring.autoconfigure.exclude = my.company.SomeAutoConfig
+
+ ---------------
+
+ @ConditionalOnMissingBean -> only include this config if bean of beanType is not defined
+
+
+ ----------------
+
+ @ConditionanOnBean     @ConditionalOnMissingBean
+ @ConditionalOnClass    @ConditionalOnMissingClass
+ @ConditionalOnProperty    @ConditionalOnMissingClass
+
