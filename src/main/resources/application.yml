@@ -9,7 +9,10 @@ spring:
   mvc:
     favicon:
       enabled: false
-logging:
-  level.: debug
+
+
       
-  
+com:
+  justgifit:
+    optimize: true
+    gif-location: ${java.io.tmpdir}/gif
